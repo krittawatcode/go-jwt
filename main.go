@@ -30,7 +30,7 @@ func main() {
 	v1 := server.Group("/v1")
 	v1.Use(middleware.AuthorizeJWT())
 	{
-		v1.GET("test", func(ctx *gin.Context) {
+		v1.GET("/test", func(ctx *gin.Context) {
 			ctx.JSON(http.StatusOK, gin.H{"message": "success"})
 		})
 	}
